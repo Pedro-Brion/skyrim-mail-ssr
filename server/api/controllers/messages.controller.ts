@@ -8,11 +8,9 @@ class MessagesControllerImpl {
   private repository: MessagesRepository;
   constructor(repository: MessagesRepository) {
     this.repository = repository;
-    console.log(repository);
   }
 
   public getMessages: RequestHandler = async (_req: Request, res: Response) => {
-    console.log("THIS", this);
     const messages = await this.repository.getAllMessages();
     res.json({
       data: messages,
