@@ -27,7 +27,7 @@ type BackgroundColor = (typeof BackgroundColors)[keyof typeof BackgroundColors];
 
 export const logger: RequestHandler = (
   req: Request,
-  res: Response,
+  _res: Response,
   next: NextFunction
 ) => {
   const bg = setBgColorStyle(BackgroundColors.White);

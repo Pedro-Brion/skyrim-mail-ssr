@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Message } from "@/model/Message";
+import { type Message } from "@/model/Message";
 
 interface MessageItemProps {
   message: Message | null;

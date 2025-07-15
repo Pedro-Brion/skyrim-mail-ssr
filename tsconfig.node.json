@@ -5,27 +5,21 @@
     "lib": ["ES2023"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "outDir": "./dist",
+    "sourceMap": true,
 
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
-    "noEmit": true,
+
+    "types": ["vite/client", "node"],
 
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
-
-    "baseUrl": "src",
-    "paths": {
-      "@/*": ["./*"],
-      "~/*": ["components/*"],
-      "@styles/*": ["styles/*"],
-      "@api/*": ["api/*"]
-    }
+    "noUncheckedSideEffectImports": true
   },
-  "include": ["vite.config.ts", "./server/index.ts", "./server/**/*.ts"]
+  "include": ["vite.config.mts", "./server/index.ts", "./server/**/*.ts","./server/data/*.json"]
 }

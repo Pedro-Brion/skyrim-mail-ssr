@@ -1,7 +1,6 @@
 import axios from "axios";
 
-const baseURL: string = import.meta.env.SSR ? "http://localhost:5173/api" : "/api" ;
-console.log(baseURL)
+const baseURL: string = import.meta.env.SSR ? import.meta.env.VITE_API_URL : "/api" ;
 
 const api = axios.create({ baseURL });
 
