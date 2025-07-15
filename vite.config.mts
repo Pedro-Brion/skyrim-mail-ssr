@@ -25,7 +25,7 @@ export default defineConfig({
         "pinia",
       ],
       viteOptimizeDeps: true,
-        injectAtEnd: true,
+      injectAtEnd: true,
     }),
   ],
   resolve: {
