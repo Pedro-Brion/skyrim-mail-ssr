@@ -1,6 +1,8 @@
 import axios from "axios";
 
-// Let's use a public API for this example
-const api = axios.create();
+const baseURL: string = import.meta.env.SSR ? "http://localhost:5173/api" : "/api" ;
+console.log(baseURL)
+
+const api = axios.create({ baseURL });
 
 export default api;

@@ -1,184 +1,182 @@
 [
-  [
-    {
+  {
+    "id": 11,
+    "title": "Thalmor Movements in Solitude",
+    "body": "A new envoy has arrived at the Blue Palace. Keep your ears open.",
+    "sender": {
       "id": 11,
-      "title": "Thalmor Movements in Solitude",
-      "body": "A new envoy has arrived at the Blue Palace. Keep your ears open.",
-      "sender": {
-        "id": 11,
-        "name": "Brynjolf"
-      }
-    },
-    {
-      "id": 12,
-      "title": "Sanctuary Breached",
-      "body": "The Dawnstar Sanctuary has been compromised. We move to the shadows once again.",
-      "sender": {
-        "id": 12,
-        "name": "Astrid"
-      }
-    },
-    {
-      "id": 13,
-      "title": "Goldenglow Job Completed",
-      "body": "The estate is in flames. Maven will be pleased... eventually.",
-      "sender": {
-        "id": 11,
-        "name": "Brynjolf"
-      }
-    },
-    {
-      "id": 14,
-      "title": "Daedric Whisper",
-      "body": "The Night Mother speaks. Blood must flow.",
-      "sender": {
-        "id": 12,
-        "name": "Astrid"
-      }
-    },
-    {
-      "id": 15,
-      "title": "Storms Over the Sea of Ghosts",
-      "body": "Ships bound for Windhelm lost to the ice. Trade routes frozen.",
-      "sender": {
-        "id": 13,
-        "name": "Ulfric Stormcloak"
-      }
-    },
-    {
-      "id": 16,
-      "title": "Word of Power Unearthed",
-      "body": "Another wall uncovered. The voice grows stronger.",
-      "sender": {
-        "id": 10,
-        "name": "Arngeir"
-      }
-    },
-    {
-      "id": 17,
-      "title": "Imperial Pressure Mounting",
-      "body": "The Empire demands we bend the knee. We shall not.",
-      "sender": {
-        "id": 13,
-        "name": "Ulfric Stormcloak"
-      }
-    },
-    {
-      "id": 18,
-      "title": "Disappearance in Markarth",
-      "body": "A nobleman vanished near the old Dwemer ruins. Locals suspect the Forsworn.",
-      "sender": {
-        "id": 14,
-        "name": "Calcemo"
-      }
-    },
-    {
-      "id": 19,
-      "title": "Blades Ready",
-      "body": "If the Dragonborn is ready, so are we.",
-      "sender": {
-        "id": 15,
-        "name": "Delphine"
-      }
-    },
-    {
-      "id": 20,
-      "title": "Dragons Circling Sky Haven",
-      "body": "We've seen shadows in the sky. The Blades are on high alert.",
-      "sender": {
-        "id": 15,
-        "name": "Delphine"
-      }
-    },
-    {
-      "id": 21,
-      "title": "No Rest in the Crypt",
-      "body": "The dead in Hillgrund’s Tomb are restless again.",
-      "sender": {
-        "id": 16,
-        "name": "Tolfdir"
-      }
-    },
-    {
-      "id": 22,
-      "title": "Magic Gone Awry",
-      "body": "A student turned half the library into skeevers. Again.",
-      "sender": {
-        "id": 16,
-        "name": "Tolfdir"
-      }
-    },
-    {
-      "id": 23,
-      "title": "Sabotage at the Meadery",
-      "body": "Someone poisoned the Black-Briar vats. Investigation underway.",
-      "sender": {
-        "id": 4,
-        "name": "Delvin Mallory"
-      }
-    },
-    {
-      "id": 24,
-      "title": "Scroll Fragment Discovered",
-      "body": "A fragment of an Elder Scroll has been uncovered in Blackreach.",
-      "sender": {
-        "id": 3,
-        "name": "Mirabelle Ervine"
-      }
-    },
-    {
-      "id": 25,
-      "title": "Hunter or Hunted?",
-      "body": "A vampire lord walks the land. Mortals are mere cattle.",
-      "sender": {
-        "id": 17,
-        "name": "Harkon"
-      }
-    },
-    {
-      "id": 26,
-      "title": "Cold Wind from the South",
-      "body": "Something stirs near the Pale Pass. Old magic, unfamiliar to the Reach.",
-      "sender": {
-        "id": 18,
-        "name": "Madanach"
-      }
-    },
-    {
-      "id": 27,
-      "title": "Moon Sugar Shipment Arrived",
-      "body": "Keep it quiet. The Khajiit won’t be pleased if this leaks.",
-      "sender": {
-        "id": 19,
-        "name": "Ma'dran"
-      }
-    },
-    {
-      "id": 28,
-      "title": "Trouble from the East",
-      "body": "The Dunmer refugees bring more than stories. Disease, maybe worse.",
-      "sender": {
-        "id": 20,
-        "name": "Galmar Stone-Fist"
-      }
-    },
-    {
-      "id": 29,
-      "title": "Azura's Vision",
-      "body": "The stars have shifted. A prophecy draws near.",
-      "sender": {
-        "id": 21,
-        "name": "Aranea Ienith"
-      }
-    },
-    {
-      "id": 30,
-      "title": "Oblivion Stirs",
-      "body": "Mehrunes Dagon whispers in dreams. The blade must be reforged.",
-      "sender": {
-        "id": 22,
-        "name": "Silus Vesuius"
-      }
+      "name": "Brynjolf"
     }
-  ]
+  },
+  {
+    "id": 12,
+    "title": "Sanctuary Breached",
+    "body": "The Dawnstar Sanctuary has been compromised. We move to the shadows once again.",
+    "sender": {
+      "id": 12,
+      "name": "Astrid"
+    }
+  },
+  {
+    "id": 13,
+    "title": "Goldenglow Job Completed",
+    "body": "The estate is in flames. Maven will be pleased... eventually.",
+    "sender": {
+      "id": 11,
+      "name": "Brynjolf"
+    }
+  },
+  {
+    "id": 14,
+    "title": "Daedric Whisper",
+    "body": "The Night Mother speaks. Blood must flow.",
+    "sender": {
+      "id": 12,
+      "name": "Astrid"
+    }
+  },
+  {
+    "id": 15,
+    "title": "Storms Over the Sea of Ghosts",
+    "body": "Ships bound for Windhelm lost to the ice. Trade routes frozen.",
+    "sender": {
+      "id": 13,
+      "name": "Ulfric Stormcloak"
+    }
+  },
+  {
+    "id": 16,
+    "title": "Word of Power Unearthed",
+    "body": "Another wall uncovered. The voice grows stronger.",
+    "sender": {
+      "id": 10,
+      "name": "Arngeir"
+    }
+  },
+  {
+    "id": 17,
+    "title": "Imperial Pressure Mounting",
+    "body": "The Empire demands we bend the knee. We shall not.",
+    "sender": {
+      "id": 13,
+      "name": "Ulfric Stormcloak"
+    }
+  },
+  {
+    "id": 18,
+    "title": "Disappearance in Markarth",
+    "body": "A nobleman vanished near the old Dwemer ruins. Locals suspect the Forsworn.",
+    "sender": {
+      "id": 14,
+      "name": "Calcemo"
+    }
+  },
+  {
+    "id": 19,
+    "title": "Blades Ready",
+    "body": "If the Dragonborn is ready, so are we.",
+    "sender": {
+      "id": 15,
+      "name": "Delphine"
+    }
+  },
+  {
+    "id": 20,
+    "title": "Dragons Circling Sky Haven",
+    "body": "We've seen shadows in the sky. The Blades are on high alert.",
+    "sender": {
+      "id": 15,
+      "name": "Delphine"
+    }
+  },
+  {
+    "id": 21,
+    "title": "No Rest in the Crypt",
+    "body": "The dead in Hillgrund’s Tomb are restless again.",
+    "sender": {
+      "id": 16,
+      "name": "Tolfdir"
+    }
+  },
+  {
+    "id": 22,
+    "title": "Magic Gone Awry",
+    "body": "A student turned half the library into skeevers. Again.",
+    "sender": {
+      "id": 16,
+      "name": "Tolfdir"
+    }
+  },
+  {
+    "id": 23,
+    "title": "Sabotage at the Meadery",
+    "body": "Someone poisoned the Black-Briar vats. Investigation underway.",
+    "sender": {
+      "id": 4,
+      "name": "Delvin Mallory"
+    }
+  },
+  {
+    "id": 24,
+    "title": "Scroll Fragment Discovered",
+    "body": "A fragment of an Elder Scroll has been uncovered in Blackreach.",
+    "sender": {
+      "id": 3,
+      "name": "Mirabelle Ervine"
+    }
+  },
+  {
+    "id": 25,
+    "title": "Hunter or Hunted?",
+    "body": "A vampire lord walks the land. Mortals are mere cattle.",
+    "sender": {
+      "id": 17,
+      "name": "Harkon"
+    }
+  },
+  {
+    "id": 26,
+    "title": "Cold Wind from the South",
+    "body": "Something stirs near the Pale Pass. Old magic, unfamiliar to the Reach.",
+    "sender": {
+      "id": 18,
+      "name": "Madanach"
+    }
+  },
+  {
+    "id": 27,
+    "title": "Moon Sugar Shipment Arrived",
+    "body": "Keep it quiet. The Khajiit won’t be pleased if this leaks.",
+    "sender": {
+      "id": 19,
+      "name": "Ma'dran"
+    }
+  },
+  {
+    "id": 28,
+    "title": "Trouble from the East",
+    "body": "The Dunmer refugees bring more than stories. Disease, maybe worse.",
+    "sender": {
+      "id": 20,
+      "name": "Galmar Stone-Fist"
+    }
+  },
+  {
+    "id": 29,
+    "title": "Azura's Vision",
+    "body": "The stars have shifted. A prophecy draws near.",
+    "sender": {
+      "id": 21,
+      "name": "Aranea Ienith"
+    }
+  },
+  {
+    "id": 30,
+    "title": "Oblivion Stirs",
+    "body": "Mehrunes Dagon whispers in dreams. The blade must be reforged.",
+    "sender": {
+      "id": 22,
+      "name": "Silus Vesuius"
+    }
+  }
 ]

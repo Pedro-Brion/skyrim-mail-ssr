@@ -7,12 +7,16 @@ import express, {
   type Response,
 } from "express";
 import { createServer as createViteServer } from "vite";
-import axios from "axios";
+import { logger } from "./logger";
+import router from "./api/routes/messages.routes";
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+//
+const __dirname: string = path.dirname(fileURLToPath(import.meta.url));
+const isProd: boolean = process.env.NODE_ENV === "production";
 
 async function createServer() {
   const app = express();
+  console.log("\x1b[36m \x1b[45m IS PROD \x1b[0m", isProd);
 
   const vite = await createViteServer({
     server: { middlewareMode: true },
@@ -21,20 +25,9 @@ async function createServer() {
 
   app.use(vite.middlewares);
 
-  app.use(
-    "/api/messages",
-    async (req: Request, res: Response, next: NextFunction) => {
-      try {
-        const response = await axios.get(`https://jsonplaceholder.typicode.com/posts?_limit=${req.query.count}`);
-        res.json(response.data);
-      } catch (e) {
-        console.error("Error fetching posts:", e);
-        res.status(500).json({ error: "Failed to fetch external data" });
-        vite.ssrFixStacktrace(e as Error);
-        next(e);
-      }
-    }
-  );
+  app.use(logger);
+
+  app.use("/api", router);
 
   app.use("*all", async (req: Request, res: Response, next: NextFunction) => {
     const url = req.originalUrl;
