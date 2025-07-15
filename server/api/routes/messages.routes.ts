@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { MessagesController } from "../controllers/messages.controller";
+import { MessagesController } from "../controllers/messages.controller.js";
 
-const router = Router();
+const router: Router = Router();
 
 router.use("/", MessagesController.getMessages);
 

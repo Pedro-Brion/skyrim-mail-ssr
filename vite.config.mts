@@ -10,7 +10,7 @@ export default defineConfig({
     vue(),
     tailwindcss(),
     autoImport({
-      dts: true, // or a custom path
+      dts: "src/auto-imports.d.ts", // or a custom path
       include: [
         /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
         /\.vue$/,
@@ -22,8 +22,10 @@ export default defineConfig({
         // presets
         "vue",
         "vue-router",
-        "pinia"
+        "pinia",
       ],
+      viteOptimizeDeps: true,
+        injectAtEnd: true,
     }),
   ],
   resolve: {

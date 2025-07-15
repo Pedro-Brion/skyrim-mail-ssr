@@ -2,7 +2,7 @@ import type { Request, Response, RequestHandler } from "express";
 import {
   messagesRepository,
   type MessagesRepository,
-} from "../repositories/messages.repository";
+} from "../repositories/messages.repository.js";
 
 class MessagesControllerImpl {
   private repository: MessagesRepository;

@@ -1,46 +1,66 @@
-import fs from "fs";
+import fs from "fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";
-import express, {
-  type NextFunction,
-  type Request,
-  type Response,
-} from "express";
-import { createServer as createViteServer } from "vite";
-import { logger } from "./logger";
-import router from "./api/routes/messages.routes";
+import express, { type Request, type Response } from "express";
+import { createServer as createViteServer, type ViteDevServer } from "vite";
+import { logger } from "./logger.js";
+import router from "./api/routes/messages.routes.js";
+import compression from "compression";
+import sirv from "sirv";
+import { configDotenv } from "dotenv";
 
-//
+configDotenv();
+
+type ServerEntryModule = {
+  render: (url: string) => Promise<{ html: string; initialState: string }>;
+};
+
+// Constants
 const __dirname: string = path.dirname(fileURLToPath(import.meta.url));
 const isProd: boolean = process.env.NODE_ENV === "production";
+const PORT = 5173;
 
 async function createServer() {
   const app = express();
-  console.log("\x1b[36m \x1b[45m IS PROD \x1b[0m", isProd);
 
-  const vite = await createViteServer({
-    server: { middlewareMode: true },
-    appType: "custom",
-  });
+  const templateHtml = isProd
+    ? await fs.readFile("./dist/client/index.html", "utf-8")
+    : "";
 
-  app.use(vite.middlewares);
+  let vite: ViteDevServer | null = null;
+  if (isProd) {
+    app.use(compression());
+    app.use("/", sirv("./dist/client", { extensions: [] }));
+  } else {
+    vite = await createViteServer({
+      server: { middlewareMode: true },
+      appType: "custom",
+    });
+    app.use(vite.middlewares);
+  }
 
   app.use(logger);
 
   app.use("/api", router);
 
-  app.use("*all", async (req: Request, res: Response, next: NextFunction) => {
+  app.use("*all", async (req: Request, res: Response) => {
     const url = req.originalUrl;
-    try {
-      let template = fs.readFileSync(
+
+    let template;
+    let render;
+    if (isProd) {
+      const entryPath = "./entry-server.js";
+      template = templateHtml;
+      render = ((await import(entryPath)) as ServerEntryModule).render;
+    } else {
+      template = await fs.readFile(
         path.resolve(__dirname, "../index.html"),
         "utf-8"
       );
-
-      template = await vite.transformIndexHtml(url, template);
-
-      const { render } = await vite.ssrLoadModule("/src/entry-server.ts");
-
+      template = await vite!.transformIndexHtml(url, template);
+      render = (await vite!.ssrLoadModule("/src/entry-server.ts")).render;
+    }
+    try {
       const { html: appHtml, initialState } = await render(url); // Get both html and state
 
       const html = template
@@ -53,12 +73,15 @@ async function createServer() {
       res.status(200).set({ "Content-Type": "text/html" }).end(html);
       //eslint-disable-next-line
     } catch (e: any) {
-      vite.ssrFixStacktrace(e);
-      next(e);
+      vite?.ssrFixStacktrace(e);
+      console.error(e.stack);
+      res.status(500).end(e.stack);
     }
   });
 
-  app.listen(5173);
+  app.listen(PORT, () => {
+    console.log("App listening on port: ", PORT);
+  });
 }
 
 createServer();

@@ -1,9 +1,15 @@
-import type { Message } from "@/model/Message";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
+type Message = {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+};
 const __dirname: string = path.dirname(fileURLToPath(import.meta.url));
+
 export interface MessagesRepository {
   getAllMessages: () => Promise<Message[]>;
 }
