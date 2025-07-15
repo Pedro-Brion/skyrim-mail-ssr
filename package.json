@@ -7,7 +7,7 @@
     "dev": "tsx ./server/index --watch",
     "build": "pnpm build:client && pnpm build:server && pnpm build:express",
     "build:client": "vue-tsc --noEmit && vite build --outDir dist/client",
-    "build:server": "vue-tsc --noEmit && vite build --ssr src/entry-server.js --outDir dist/server",
+    "build:server": "vue-tsc --noEmit && vite build --ssr src/entry-server.ts --outDir dist/server",
     "build:express": "tsc -p tsconfig.node.json",
     "preview": "cross-env NODE_ENV=production node dist/server"
   },

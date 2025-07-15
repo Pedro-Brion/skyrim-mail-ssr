@@ -43,13 +43,13 @@ async function createServer() {
 
   app.use("/api", router);
 
-  app.use("*all", async (req: Request, res: Response) => {
+  app.use("*", async (req: Request, res: Response) => {
     const url = req.originalUrl;
 
     let template;
     let render;
     if (isProd) {
-      const entryPath = "./entry-server.js";
+      const entryPath = path.resolve(__dirname, "../server/entry-server.js");
       template = templateHtml;
       render = ((await import(entryPath)) as ServerEntryModule).render;
     } else {
@@ -73,9 +73,14 @@ async function createServer() {
       res.status(200).set({ "Content-Type": "text/html" }).end(html);
       //eslint-disable-next-line
     } catch (e: any) {
-      vite?.ssrFixStacktrace(e);
-      console.error(e.stack);
-      res.status(500).end(e.stack);
+      if (!isProd && vite) {
+        vite.ssrFixStacktrace(e);
+        console.error(e.stack);
+        res.status(500).end(e.stack);
+      } else {
+        console.error("SSR render error:", e);
+        res.status(500).end("Internal Server Error");
+      }
     }
   });
 

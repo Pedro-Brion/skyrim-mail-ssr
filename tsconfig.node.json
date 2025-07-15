@@ -5,8 +5,8 @@
     "lib": ["ES2023"],
     "module": "ESNext",
     "skipLibCheck": true,
-    "outDir": "./dist", // Tells TSC where to put the compiled .js files
-    "sourceMap": true, // Recommended for easier debugging
+    "outDir": "./dist",
+    "sourceMap": true,
 
     "moduleResolution": "bundler",
     "verbatimModuleSyntax": true,
