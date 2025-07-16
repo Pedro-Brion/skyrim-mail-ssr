@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useMessagesStore } from "@/stores/messages";
-import MainButton from "~/ui/button/MainButton.vue";
 import MessageItem from "~/layout/MessageItem.vue";
+import SVGButton from "@/components/ui/button/SVGButton.vue";
 
 const { messages } = storeToRefs(useMessagesStore());
 const { fetchMessages } = useMessagesStore();
@@ -20,18 +20,19 @@ async function refetch() {
 </script>
 
 <template>
-  <div class="flex flex-col place-items-center mb-20">
-    <img class="w-28" src="/logo.webp" alt="" />
-    <h1 class="text-3xl">Skyrim Mail Index Page</h1>
-    <MainButton @click="refetch"> Refetch </MainButton>
+  <div class="flex bg-background  place-items-center p-2 relative">
+    <img class="w-10 mr-2 absolute right-0 top-1" src="/logo.webp" alt="" />
+
+    <SVGButton label="New Message" />
   </div>
-  <h2 class="text-center" v-if="loading">Loading.....</h2>
-  <div class="flex flex-col gap-2 w-[75vw] mx-auto mt-4">
-    <MessageItem
-      v-for="message of messages"
-      :key="message.id"
-      :message
-    ></MessageItem>
+  <div class="flex flex-wrap flex-1 gap-1 w-full">
+    <div
+      class="shrink-0 w-48 h-full hover:w-48 transition-[width]"
+    ></div>
+    <div class="flex flex-1 gap-1 p-2">
+      <div class="flex-6/24 rounded min-w-[260px] h-full bg-pink-500"></div>
+      <div class="flex-12/24 rounded h-full bg-cyan-700"></div>
+    </div>
   </div>
 </template>
 
