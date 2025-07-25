@@ -1,6 +1,5 @@
 <script setup lang="ts">
 defineProps<{ label: string }>();
-const textRef = ref<SVGGraphicsElement | null>(null);
 </script>
 
 <template>
@@ -69,7 +68,6 @@ const textRef = ref<SVGGraphicsElement | null>(null);
         </filter>
       </defs>
       <text
-        ref="textRef"
         :x="251 / 2"
         :y="49 / 2"
         dominant-baseline="middle"

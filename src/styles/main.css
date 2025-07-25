@@ -2,10 +2,11 @@
 
 @font-face {
   font-family: "Futura PT";
-  src: url("/fonts/futura-condensed-pt/futura-condensed-pt-medium.otf"),
-    url("/fonts/futura-condensed-pt/futura-pt-bold.otf"),
-    url("/fonts/futura-condensed-pt/futura-pt-book.otf"),
-    url("/fonts/futura-condensed-pt/futura-pt-light.otf");
+  src: url("/fonts/futura-condensed-pt/futura-condensed-pt-medium.otf")
+      format("opentype"),
+    url("/fonts/futura-condensed-pt/futura-pt-bold.otf") format("opentype"),
+    url("/fonts/futura-condensed-pt/futura-pt-book.otf") format("opentype"),
+    url("/fonts/futura-condensed-pt/futura-pt-light.otf") format("opentype");
 }
 
 @theme {
