@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Futura PT";
+  src: url("/fonts/futura-condensed-pt/futura-condensed-pt-medium.otf")
+      format("opentype"),
+    url("/fonts/futura-condensed-pt/futura-pt-bold.otf") format("opentype"),
+    url("/fonts/futura-condensed-pt/futura-pt-book.otf") format("opentype"),
+    url("/fonts/futura-condensed-pt/futura-pt-light.otf") format("opentype");
+}
+
 @theme {
   --color-background: var(--background);
   --color-background-muted: var(--background-muted);
@@ -24,6 +33,14 @@
   --foreground-muted: #3a3a34;
 }
 
+.dark {
+  --background: #171715;
+  --background-muted: #3a3a34;
+  --foreground: #fcf2d7;
+  --on-foreground: #171715;
+  --foreground-muted: #746f64;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -38,4 +55,8 @@ body {
   display: flex;
   min-width: 320px;
   min-height: 100vh;
+}
+
+* {
+  font-family: "Futura PT", "Times New Roman", Times, serif;
 }

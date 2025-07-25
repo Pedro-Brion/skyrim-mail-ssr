@@ -43,7 +43,7 @@ async function createServer() {
 
   app.use("/api", router);
 
-  app.use("*", async (req: Request, res: Response) => {
+  app.use("*all", async (req: Request, res: Response) => {
     const url = req.originalUrl;
 
     let template;
