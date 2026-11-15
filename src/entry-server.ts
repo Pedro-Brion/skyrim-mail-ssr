@@ -4,9 +4,7 @@ import { useMessagesStore } from "./stores/messages";
 
 export async function render() {
   const { app, pinia } = createApp();
-
-  const postStore = useMessagesStore(pinia);
-  await postStore.fetchMessages();
+  await useMessagesStore(pinia).fetchMessages();
 
   const html = await renderToString(app);
 

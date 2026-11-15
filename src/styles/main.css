@@ -29,7 +29,7 @@
   --background: #fcf2d7;
   --background-muted: #746f64;
   --foreground: #171715;
-  --on-foreground: #fcf2d7;
+  --on-foreground: #d9d9d9;
   --foreground-muted: #3a3a34;
 }
 
@@ -59,4 +59,6 @@ body {
 
 * {
   font-family: "Futura PT", "Times New Roman", Times, serif;
+  scrollbar-color: var(--foreground) transparent;
+  scrollbar-width: thin;
 }

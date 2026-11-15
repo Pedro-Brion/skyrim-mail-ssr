@@ -1,6 +1,6 @@
 import fs from "fs/promises";
 import path from "path";
-import { fileURLToPath } from "url";
+import { fileURLToPath, pathToFileURL } from "url";
 import express, { type Request, type Response } from "express";
 import { createServer as createViteServer, type ViteDevServer } from "vite";
 import { logger } from "./logger.js";
@@ -50,8 +50,9 @@ async function createServer() {
     let render;
     if (isProd) {
       const entryPath = path.resolve(__dirname, "../server/entry-server.js");
+      const entryUrl = pathToFileURL(entryPath).href;
       template = templateHtml;
-      render = ((await import(entryPath)) as ServerEntryModule).render;
+      render = ((await import(entryUrl)) as ServerEntryModule).render;
     } else {
       template = await fs.readFile(
         path.resolve(__dirname, "../index.html"),
