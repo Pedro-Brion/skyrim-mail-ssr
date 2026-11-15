@@ -9,5 +9,5 @@ export function createApp() {
   const router = createRouter();
   app.use(pinia);
   app.use(router);
-  return { app, pinia };
+  return { app, pinia, router };
 }
