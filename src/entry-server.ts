@@ -5,7 +5,7 @@ import { renderToString } from "vue/server-renderer";
 export async function render(url: string) {
   const { app, pinia, router } = createApp();
 
-  router.push(url);
+  await router.push(url);
   await router.isReady();
   let status = 200;
   if (router.currentRoute.value.meta) {
