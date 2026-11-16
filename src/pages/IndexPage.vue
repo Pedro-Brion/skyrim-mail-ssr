@@ -49,7 +49,7 @@ onMounted(() => { });
   </div>
   <div class="content flex bg-emerald-100 flex-1 gap-1 pt-1 overflow-hidden">
     <div class="shrink-0 bg-foreground w-20 hover:w-48 transition-[width]"></div>
-    <div class="flex flex-1">
+    <div class="flex flex-1 min-w-0">
       <div class="flex flex-col rounded h-full min-w-62.5" :style="{ width: `${size}px` }" ref="resizableColumn">
         <div class="bg-indigo-300 w-full h-20">Caixa de entrada </div>
         <div class="overflow-y-scroll flex flex-col gap-1 pb-8">
