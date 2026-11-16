@@ -62,16 +62,18 @@ async function createServer() {
       render = (await vite!.ssrLoadModule("/src/entry-server.ts")).render;
     }
     try {
-      const { html: appHtml, initialState } = await render(url); // Get both html and state
+      const { html: appHtml, initialState, status } = await render(url);
 
       const html = template
         .replace(`<!--ssr-outlet-->`, () => appHtml)
         .replace(
           `<!--initial-state-->`,
-          `<script>window.__INITIAL_STATE__ = ${initialState}</script>`
+          () =>
+            "<script>window.__INITIAL_STATE__ = " + initialState + "</script>"
         );
 
-      res.status(200).set({ "Content-Type": "text/html" }).end(html);
+
+      res.status(status).set({ "Content-Type": "text/html" }).end(html);
       //eslint-disable-next-line
     } catch (e: any) {
       if (!isProd && vite) {
