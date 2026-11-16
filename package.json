@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "tsx ./server/index --watch",
+    "dev": "tsx watch ./server/index",
     "build": "pnpm build:client && pnpm build:server && pnpm build:express",
     "build:client": "vue-tsc --noEmit && vite build --outDir dist/client",
     "build:server": "vue-tsc --noEmit && vite build --ssr src/entry-server.ts --outDir dist/server",
