@@ -1,3 +1,7 @@
-import { createPinia } from "pinia";
+import { createPinia as _createPinia } from "pinia";
 
-export default createPinia();
+export function createPinia() {
+  const pinia = _createPinia();
+
+  return pinia;
+}

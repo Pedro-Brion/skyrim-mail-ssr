@@ -1,17 +1,25 @@
 import { createApp } from "./main";
+import { uneval } from "devalue";
 import { renderToString } from "vue/server-renderer";
-import { useMessagesStore } from "./stores/messages";
 
-export async function render() {
-  const { app, pinia } = createApp();
+export async function render(url: string) {
+  const { app, pinia, router } = createApp();
 
-  const postStore = useMessagesStore(pinia);
-  await postStore.fetchMessages();
+  await router.push(url);
+  await router.isReady();
+  let status = 200;
+  if (router.currentRoute.value.meta) {
+    const routeStatus = Number(router.currentRoute.value.meta?.status);
+    status = routeStatus || 200;
+  }
+
+  if(router.currentRoute.value.meta?.initialState){
+    await router.currentRoute.value.meta?.initialState(pinia)
+  }
 
   const html = await renderToString(app);
 
-  // Serialize the final state to be sent to the client
-  const initialState = JSON.stringify(pinia.state.value);
+  const initialState = uneval(pinia.state.value);
 
-  return { html, initialState };
+  return { html, initialState, status };
 }

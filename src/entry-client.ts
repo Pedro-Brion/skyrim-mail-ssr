@@ -1,6 +1,6 @@
 import { createApp } from "./main";
 
-const { app, pinia } = createApp();
+const { app, pinia, router } = createApp();
 declare global {
   interface Window {
     //eslint-disable-next-line
@@ -10,5 +10,7 @@ declare global {
 if (window.__INITIAL_STATE__) {
   pinia.state.value = window.__INITIAL_STATE__;
 }
+
+await router.isReady()
 
 app.mount("#app");

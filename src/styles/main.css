@@ -9,7 +9,7 @@
     url("/fonts/futura-condensed-pt/futura-pt-light.otf") format("opentype");
 }
 
-@theme {
+@theme inline {
   --color-background: var(--background);
   --color-background-muted: var(--background-muted);
   --color-foreground: var(--foreground);
@@ -29,7 +29,7 @@
   --background: #fcf2d7;
   --background-muted: #746f64;
   --foreground: #171715;
-  --on-foreground: #fcf2d7;
+  --on-foreground: #d9d9d9;
   --foreground-muted: #3a3a34;
 }
 
@@ -39,15 +39,15 @@
   --foreground: #fcf2d7;
   --on-foreground: #171715;
   --foreground-muted: #746f64;
+  color: var(--foreground)
 }
 
 a {
   font-weight: 500;
-  color: #646cff;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  text-decoration: underline;
 }
 
 body {
@@ -59,4 +59,6 @@ body {
 
 * {
   font-family: "Futura PT", "Times New Roman", Times, serif;
+  scrollbar-color: var(--foreground) transparent;
+  scrollbar-width: thin;
 }
